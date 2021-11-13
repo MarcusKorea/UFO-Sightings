@@ -19,7 +19,7 @@ function addTable(data){
         Object.entries(object).forEach(function([key,value]){
     
             // print to the log
-            // console.log(key,value);
+            console.log(key,value);
     
             // append to the row
             var cell = row.append("td");

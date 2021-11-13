@@ -5,20 +5,21 @@ var tableData = data;
 var tbody = d3.select("tbody");
 
 // Create functions that reduce the amount of code
+
 // Create function that will add the data as a table
 function addTable(data){
     data.forEach(function(object){
         // puts it to the log
-        console.log(object);
+        // console.log(object);
     
         // creates a row in the table
         var row = tbody.append("tr");
     
-        // loop through object and grab ket value pairs
+        // loop through object and grab key value pairs
         Object.entries(object).forEach(function([key,value]){
     
             // print to the log
-            // console.log(key,value);
+            console.log(key,value);
     
             // append to the row
             var cell = row.append("td");
@@ -39,6 +40,7 @@ function deleteTables(){
 function resetFilters(){
     deleteTables();
     addTable(tableData);
+    filteredData = tableData;
 }
 
 // checks if filtered data is empty and prints a message
@@ -48,7 +50,7 @@ function noData(data){
     }
 }
 
-deleteTables();
+
 // add the original dataset as a table
 addTable(tableData);
 
@@ -58,7 +60,7 @@ var filter = d3.select("#filter-btn")
 
 // select the form
 var form = d3.select("#form");
-console.log(`This is the ${form}`);
+
 // select the reset button
 var resetBtn = d3.select("#reset-btn");
 
@@ -74,26 +76,23 @@ function runEnter(){
     // clear the table data
     deleteTables();
 
-    // Select the input date element and get the raw HTML node
-    var dateElement = d3.select("#datetime");
+    var filteredData = tableData;
+    var values = document.getElementsByClassName("form-control");
   
-    // Get the value property of the date element
-    var dateValue = dateElement.property("value");
+    // iterate through all the input fields
+    for (var i = 0; i < values.length; i++) {
+      
+        var names = values[i].id;
+        var input = d3.select("#" + names).property("value");
+        if(input.length == 0){
+            continue;
+        }
+        else{
+            var filteredData = filteredData.filter(row => row[names].toUpperCase()===input.toUpperCase());        
+        }
+        
+    };
 
-
-    // Select the input city element and get the raw HTML node
-    var cityElement = d3.select("#datetime");
-  
-    // Get the value property of the city element
-    var cityValue = cityElement.property("value");
-
-
-
-
-    // filter data
-    var filteredData = tableData.filter(row => row.datetime === dateValue);
-    var filteredData = tableData.filter(row => row.city === cityValue);
-    
     noData(filteredData);    
 
     // add to log

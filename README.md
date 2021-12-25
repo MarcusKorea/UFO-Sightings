@@ -40,12 +40,25 @@ You can handle this... right? The planet Earth needs to know what we have found!
 
 * [UFO Sightings Data](StarterCode/static/js/data.js)
 
-- - -
-
-**Good luck!**
-
-- - -
 
 ### Copyright
 
 © 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
+
+- HTML
+- CSS
+- JavaScript (Bootstrap)
+
+
+## **Javascript Libraries Used**:
+- D3
+
+## **Screenshots**
+![Screenshot 1](/Screenshots/Page1.png)
+![Screenshot 2](/Screenshots/Page2.png)
+![Screenshot 3](/Screenshots/Page3.png)
+
+## Using the Web Page
+1. Open the file [index.html](UFO-level-2/index.html) in any web browser you would like.
+2. Enter data to filter by.
+3. Hit reset filters everytime you want to start again

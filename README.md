@@ -59,7 +59,7 @@ You can handle this... right? The planet Earth needs to know what we have found!
 ![Screenshot 3](/Screenshots/Page3.png)
 
 ## Using the Web Page
-**Note: Everything done in level 1 is also done (and built upon in level 2).
+**Note: Everything done in level 1 is also done (and built upon in level 2).**
 1. Open the file [index.html](UFO-level-2/index.html) in any web browser you would like.
 2. Enter data to filter by.
 3. Hit reset filters everytime you want to start again
